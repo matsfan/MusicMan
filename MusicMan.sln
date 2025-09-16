@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11010.61 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicMan.Domain", "src\MusicMan.Domain\MusicMan.Domain.csproj", "{02DAADA1-ADBD-4AA5-9BF7-DC0702858789}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicMan.Application", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicMan.Infrastructure", "src\MusicMan.Infrastructure\MusicMan.Infrastructure.csproj", "{F7D1B12E-C721-4339-84B0-65A39EEBF098}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicMan.Web", "src\MusicMan.Web\MusicMan.Web.csproj", "{F17DE4A3-16F5-DAB6-E818-FD23F4547307}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicMan.WebApi", "src\MusicMan.Web\MusicMan.WebApi.csproj", "{F17DE4A3-16F5-DAB6-E818-FD23F4547307}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicMan.AppHost", "src\MusicMan.AppHost\MusicMan.AppHost.csproj", "{2AAEFCB7-BAA3-4BDC-925B-F8B05D4461A6}"
 EndProject
