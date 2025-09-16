@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MusicMan.Web\MusicMan.WebApi.csproj" />
+    <ProjectReference Include="..\MusicMan.WebApi\MusicMan.WebApi.csproj" />
   </ItemGroup>
 
 </Project>
