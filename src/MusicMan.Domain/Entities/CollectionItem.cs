@@ -14,8 +14,9 @@ public class CollectionItem
 
     public CollectionItem(Album album, string? notes = null)
     {
-        Album = album;
+        Album = album ?? throw new ArgumentNullException(nameof(album));
         AlbumId = album.Id;
         Notes = notes;
+        AddedAtUtc = DateTime.UtcNow; // ensure set at construction time
     }
 }

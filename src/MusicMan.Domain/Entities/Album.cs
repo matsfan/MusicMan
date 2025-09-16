@@ -19,9 +19,16 @@ public class Album
 
     public Album(long discogsReleaseId, string title, string artist, int? year, string? country, string? coverImageUrl, string? barcode)
     {
+        if (discogsReleaseId <= 0)
+            throw new ArgumentOutOfRangeException(nameof(discogsReleaseId), "Discogs release id must be positive.");
+        if (string.IsNullOrWhiteSpace(title))
+            throw new ArgumentException("Title is required.", nameof(title));
+        if (string.IsNullOrWhiteSpace(artist))
+            throw new ArgumentException("Artist is required.", nameof(artist));
+
         DiscogsReleaseId = discogsReleaseId;
-        Title = title;
-        Artist = artist;
+        Title = title.Trim();
+        Artist = artist.Trim();
         Year = year;
         Country = country;
         CoverImageUrl = coverImageUrl;
