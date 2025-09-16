@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+         IgnorableNamespaces="uap">
+  <Identity Name="MusicMan.Mobile" Publisher="CN=MusicMan" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>MusicMan Mobile</DisplayName>
+    <PublisherDisplayName>MusicMan</PublisherDisplayName>
+    <Logo>appicon.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.19041.0" MaxVersionTested="10.0.22621.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MusicMan.Mobile.App">
+      <uap:VisualElements DisplayName="MusicMan Mobile" Square150x150Logo="appicon.png" Square44x44Logo="appiconfg.png" Description="MusicMan Mobile" BackgroundColor="transparent">
+      </uap:VisualElements>
+      <Extensions />
+    </Application>
+  </Applications>
+  <Capabilities>
+    <DeviceCapability Name="webcam" />
+    <uap:Capability Name="internetClient" />
+  </Capabilities>
+</Package>

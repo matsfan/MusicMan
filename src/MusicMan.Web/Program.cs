@@ -37,9 +37,23 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+// Simple stub to accept barcodes from the mobile app.
+// Later: delegate to an Application handler and persist in Infrastructure.
+app.MapPost("/api/collection/barcodes", (AddByBarcodeRequest req) =>
+{
+    if (string.IsNullOrWhiteSpace(req.Barcode))
+        return Results.BadRequest(new { error = "Barcode is required." });
+
+    // TODO: dispatch to Application layer for real processing
+    return Results.Ok(new { received = req.Barcode });
+})
+.WithName("AddByBarcode");
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+public record AddByBarcodeRequest(string Barcode);
