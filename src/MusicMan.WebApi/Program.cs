@@ -1,3 +1,6 @@
+using MusicMan.WebApi.Endpoints.Collection;
+using MusicMan.WebApi.Endpoints.WeatherForecast;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
@@ -18,42 +21,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
-
-// Simple stub to accept barcodes from the mobile app.
-// Later: delegate to an Application handler and persist in Infrastructure.
-app.MapPost("/api/collection/barcodes", (AddByBarcodeRequest req) =>
-{
-    if (string.IsNullOrWhiteSpace(req.Barcode))
-        return Results.BadRequest(new { error = "Barcode is required." });
-
-    // TODO: dispatch to Application layer for real processing
-    return Results.Ok(new { received = req.Barcode });
-})
-.WithName("AddByBarcode");
+// REPR: map endpoints defined with co-located Request/Endpoint/Response types
+app.MapWeatherForecast();
+app.MapAddByBarcode();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
-
-public record AddByBarcodeRequest(string Barcode);
+// Records moved into their respective endpoint files (REPR)
