@@ -18,4 +18,9 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MusicMan.Application\MusicMan.Application.csproj" />
+    <ProjectReference Include="..\..\src\MusicMan.Domain\MusicMan.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

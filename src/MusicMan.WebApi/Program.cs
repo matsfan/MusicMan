@@ -3,6 +3,7 @@ using MusicMan.WebApi.Endpoints.WeatherForecast;
 using MusicMan.Infrastructure.DependencyInjection;
 using MusicMan.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using MusicMan.Application.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddSwaggerGen();
 
 // Infrastructure (EF Core with SQLite, health checks)
 builder.Services.AddInfrastructure(builder.Configuration);
+// Application services
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

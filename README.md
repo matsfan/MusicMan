@@ -4,9 +4,27 @@ An app for managing your music collection. This solution uses .NET 9, Aspire App
 
 ## Prerequisites
 
-- .NET SDK 9 (Preview acceptable; see `global.json` if present)
-- PowerShell (Windows) or a shell of your choice
-- Optional (for orchestration): Aspire workloads installed by the .NET SDK templates
+## Add album by barcode
+
+- Endpoint: `POST /api/collection/barcodes`
+- Request: `{ "barcode": "<EAN/UPC>" }`
+- Response 201 Created:
+
+  ```json
+  {
+    "collectionItemId": "guid",
+    "albumId": "guid",
+    "discogsReleaseId": 12345,
+    "title": "...",
+    "artist": "..."
+  }
+  ```
+
+Configuration (Development): set Discogs token to avoid rate limits and access full data.
+
+- `src/MusicMan.WebApi/appsettings.Development.json` has a `Discogs` section. Prefer setting the token via environment variable:
+  - `Discogs__Token=your_token_here`
+  - Or use dotnet user-secrets in the WebApi project.
 
 ## Solution layout (Clean Architecture)
 

@@ -17,6 +17,12 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MusicMan.Domain\MusicMan.Domain.csproj" />
+    <ProjectReference Include="..\MusicMan.Application\MusicMan.Application.csproj" />
   </ItemGroup>
 
 </Project>

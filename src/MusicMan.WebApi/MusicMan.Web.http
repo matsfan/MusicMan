@@ -4,3 +4,12 @@ GET {{MusicMan.Web_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+POST {{MusicMan.Web_HostAddress}}/api/collection/barcodes
+Content-Type: application/json
+
+{
+	"barcode": "0603497831297"
+}
+
+###
