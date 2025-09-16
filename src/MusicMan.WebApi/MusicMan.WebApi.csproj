@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MusicMan.ServiceDefaults\MusicMan.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\MusicMan.Infrastructure\MusicMan.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
